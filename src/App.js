@@ -26,7 +26,20 @@ class App extends Component {
     if(this.state.isLoaded){
         return (
           <div className="App">
-            Loaded
+            <ul>
+              {
+                this.state.items.map(el => (
+                  <li>
+                      Name: {el.name}
+                      <br />
+                      Email: {el.email}
+                      <br />
+                      <br />
+                  </li>)
+                  )
+              }
+            </ul>
+
           </div>
         )
       } else {
@@ -36,6 +49,7 @@ class App extends Component {
           </div>
         )
       }
+
   }
 }
 
