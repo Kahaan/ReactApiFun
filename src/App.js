@@ -33,8 +33,6 @@ class App extends Component {
                       Name: {el.name}
                       <br />
                       Email: {el.email}
-                      <br />
-                      <br />
                   </li>)
                   )
               }
