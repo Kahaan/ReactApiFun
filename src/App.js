@@ -2,17 +2,40 @@ import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
-  constructor(){
-    super()
-    this.state = {isLoaded: false, items: []}
+  constructor(props){
+    super(props)
+    this.state = {
+      isLoaded: false,
+       items: [],
+     }
+  }
+
+  componentDidMount(){
+    fetch("https://jsonplaceholder.typicode.com/users")
+        .then(res => res.json())
+        .then(json => {
+            this.setState({
+              isLoaded:true,
+              items: json
+            })
+        })
   }
 
   render() {
-    return (
-      <div className="App">
 
-      </div>
-    );
+    if(this.state.isLoaded){
+        return (
+          <div className="App">
+            Loaded
+          </div>
+        )
+      } else {
+        return (
+          <div className="App">
+            Loading....
+          </div>
+        )
+      }
   }
 }
 
