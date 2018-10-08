@@ -16,7 +16,7 @@ class App extends Component {
         .then(json => {
             this.setState({
               isLoaded:true,
-              items: json,
+              items: json
             })
         })
   }
